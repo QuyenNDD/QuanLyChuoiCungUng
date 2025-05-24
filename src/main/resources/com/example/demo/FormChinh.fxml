@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ui.FormChinh">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Nhập Xuất" visible="false" fx:id="menuNhapXuat">
+            <items>
+                  <Menu mnemonicParsing="false" text="Quản lý nhập xuất">
+                    <items>
+                      <MenuItem fx:id="btnNhanVien" mnemonicParsing="false" text="Nhân viên" onAction="#openNhanVien"/>
+                        <MenuItem fx:id="btnVatTu" mnemonicParsing="false" text="Vật tư" onAction="#openVatTu"/>
+                        <MenuItem fx:id="btnKho" mnemonicParsing="false" text="Kho" onAction="#openKho"/>
+                        <Menu fx:id="btnMENU" mnemonicParsing="false" text="Lập phiếu">
+                          <items>
+                            <MenuItem fx:id="btnDonDatHang" mnemonicParsing="false" text="Đơn đặt hàng" onAction="#openDonDatHang"/>
+                              <MenuItem fx:id="btnPhieuNhap" mnemonicParsing="false" text="Phiếu nhập" onAction="#openPhieuNhap"/>
+                              <MenuItem fx:id="btnPhieuXuat" mnemonicParsing="false" text="Phiếu xuất"  onAction="#openPhieuXuat"/>
+                          </items>
+                        </Menu>
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Báo cáo" visible="false" fx:id="menuBaoCao">
+            <items>
+                  <Menu mnemonicParsing="false" text="Quản lý báo cáo">
+                    <items>
+                        <MenuItem fx:id="btnHoatDongNhanVien" mnemonicParsing="false" text="Hoạt động nhân viên" onAction="#openHoatDongNhanVien"/>
+                        <MenuItem fx:id="btnTongHopNhapXuat" mnemonicParsing="false" text="Tổng hợp nhập/xuất" onAction="#openTongHopNhapXuat"/>
+                        <MenuItem fx:id="btnDonHangKhongPhieuNhap" mnemonicParsing="false" text="Đơn hàng không có phiếu nhập" onAction="#openDonHangKhongPN"/>
+                        <MenuItem fx:id="btnChiTietNhapXuat" mnemonicParsing="false" text="Chi tiết phiếu nhập/xuất" onAction="#openChiTietNhapXuat"/>
+                        <MenuItem fx:id="btnDanhSachVatTu" mnemonicParsing="false" text="DS vật tư" onAction="#openDanhSachVatTu"/>
+                        <MenuItem fx:id="btnDanhSachNhanVien" mnemonicParsing="false" text="DS nhân viên" onAction="#openDanhSachNhanVien"/>
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Hệ thống">
+            <items>
+                  <Menu mnemonicParsing="false" text="Quản lý tài khoản">
+                    <items>
+                        <MenuItem fx:id="btnDangNhap" mnemonicParsing="false" text="Đăng nhập" onAction="#handleDangNhap"/>
+                        <MenuItem fx:id="btnDangXuat" mnemonicParsing="false" text="Đăng xuất" onAction="#handleDangXuat"/>
+                        <MenuItem fx:id="btnLapTaiKhoan" disable="true" mnemonicParsing="false" text="Tạo tài khoản" onAction="#openTaoTaiKhoan"/>
+                        <MenuItem fx:id="btnThoat" mnemonicParsing="false" text="Thoát" onAction="#handleThoat"/>
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="227.0" prefWidth="369.0" />
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" prefHeight="73.0" prefWidth="600.0" spacing="20.0">
+         <children>
+            <Label fx:id="MANHANVIEN" text="Mã nhân viên" />
+            <Label fx:id="HOTEN" text="Họ tên" />
+            <Label fx:id="NHOM" layoutX="82.0" layoutY="52.0" text="Vai trò" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

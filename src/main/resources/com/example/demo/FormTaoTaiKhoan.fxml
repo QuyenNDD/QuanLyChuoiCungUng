@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="608.0" prefWidth="658.0" spacing="15" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ui.FormTaoTaiKhoan">
+   <padding>
+      <Insets bottom="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+       <Label text="TẠO TÀI KHOẢN">
+           <font>
+               <Font name="Tahoma Bold" size="24.0" />
+           </font>
+       </Label>
+
+       <GridPane hgap="10" maxWidth="500" vgap="15">
+           <columnConstraints>
+               <ColumnConstraints percentWidth="40" />
+               <ColumnConstraints percentWidth="50" />
+               <ColumnConstraints percentWidth="10" />
+           </columnConstraints>
+
+           <!-- Mã Nhân Viên -->
+           <Label text="Mã Nhân Viên:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+           <TextField fx:id="txtMaNhanVien" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+           <Button fx:id="btnChonNhanVien" prefHeight="25.0" prefWidth="77.0" text="Chọn Nhân Viên" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+           <!-- Mật Khẩu -->
+           <Label text="Mật Khẩu:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+           <PasswordField fx:id="txtMatKhau" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+           <!-- Xác Nhận Mật Khẩu -->
+           <Label text="Xác Nhận Mật Khẩu:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+           <PasswordField fx:id="txtXacNhanMatKhau" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+       </GridPane>
+
+       <HBox spacing="20" alignment="CENTER_LEFT" maxWidth="500">
+           <RadioButton fx:id="rdChiNhanh" text="Chi Nhánh" layoutX="292" layoutY="419" toggleGroup="$vaiTroGroup" selected="true"/>
+           <RadioButton fx:id="rdUser" text="User" layoutX="441" layoutY="419" toggleGroup="$vaiTroGroup"/>
+
+           <!-- Định nghĩa ToggleGroup ở root hoặc controller -->
+           <fx:define>
+               <ToggleGroup fx:id="vaiTroGroup"/>
+           </fx:define>
+       </HBox>
+
+       <!-- Nút chức năng -->
+       <HBox spacing="40" maxWidth="500" alignment="CENTER">
+           <Button fx:id="btnXacNhan" text="XÁC NHẬN" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="150" prefHeight="44"/>
+           <Button fx:id="btnThoat" text="THOÁT" style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="150" prefHeight="44"/>
+       </HBox>
+   </children>
+</VBox>

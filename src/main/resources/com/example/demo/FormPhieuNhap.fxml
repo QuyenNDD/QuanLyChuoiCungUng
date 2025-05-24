@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.ui.FormPhieuNhap">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+            <Button fx:id="btnThem" text="Thêm Phiếu Nhập" />
+            <Button fx:id="btnXoa" text="Xóa Phiếu Nhập" />
+            <Button fx:id="btnGhi" text="Lưu" />
+            <Button fx:id="btnPhucHoi" text="Hoàn Tác" />
+            <Separator />
+            <Button fx:id="btnThemCT" text="Thêm Chi Tiết" />
+            <Button fx:id="btnXoaCT" text="Xóa Chi Tiết" />
+            <Button fx:id="btnGhiCT" text="Ghi Chi Tiết" />
+            <Button fx:id="btnPhucHoiCT" text="Hoàn Tác CT" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <VBox spacing="10">
+         <children>
+            <TitledPane animated="false" expanded="true" text="Danh sách đơn đặt hàng">
+                <TableView fx:id="tableDDH" prefHeight="150">
+                    <columns>
+                        <TableColumn text="Mã DDH" />
+                        <TableColumn text="Ngày" />
+                        <TableColumn prefWidth="109.0" text="Nhà Cung Cấp" />
+                    </columns>
+                </TableView>
+            </TitledPane>
+
+            <TitledPane animated="false" expanded="true" text="Thông tin phiếu nhập">
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Mã Phiếu Nhập:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtMaPhieuNhap" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Ngày:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <DatePicker fx:id="dateNgay" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Mã Đơn Đặt Hàng:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtMaDDH" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Button fx:id="btnChonDonHang" disable="true" text="Chọn Đơn Hàng" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                  <columnConstraints>
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                     <ColumnConstraints />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints />
+                     <RowConstraints />
+                     <RowConstraints />
+                  </rowConstraints>
+                </GridPane>
+            </TitledPane>
+
+            <TitledPane animated="false" expanded="true" text="Danh sách phiếu nhập">
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Mã Vật Tư:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtMaVT" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="btnChonVatTu" disable="true" text="Chọn Vật Tư" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                    <Label text="Số Lượng:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Spinner fx:id="spinSoLuong" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Đơn Giá:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Spinner fx:id="spinDonGia" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <padding>
+                        <Insets bottom="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </GridPane>
+            </TitledPane>
+
+            <TitledPane animated="false" expanded="true" text="Chi tiết phiếu nhập">
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Mã Vật Tư:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtCTMaVatTu" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Button fx:id="btnCTChonVatTu" disable="true" text="Chọn Vật Tư" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+                    <Label text="Số Lượng:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Spinner fx:id="spinCTSoLuong" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Đơn Giá:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Spinner fx:id="spinCTDonGia" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <padding>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </padding>
+                </GridPane>
+            </TitledPane>
+
+            <TitledPane animated="false" text="Danh sách chi tiết phiếu nhập" expanded="true">
+                <TableView fx:id="tableChiTietPN" prefHeight="150">
+                    <columns>
+                        <TableColumn text="Mã VT" />
+                        <TableColumn text="Số Lượng" />
+                        <TableColumn text="Đơn Giá" />
+                    </columns>
+                </TableView>
+            </TitledPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>

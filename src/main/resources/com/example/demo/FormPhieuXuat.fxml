@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.demo.ui.FormPhieuXuat"
+            prefHeight="743.0" prefWidth="1021.0">
+    <Label layoutX="20" layoutY="10" text="Phiếu Xuất" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+    <VBox layoutX="20" layoutY="40" spacing="10">
+
+        <HBox spacing="20">
+            <Label text="Mã Phiếu Xuất:" />
+            <TextField fx:id="txtMaPhieuXuat" editable="false" prefWidth="125" />
+
+            <Label text="Ngày:" />
+            <DatePicker fx:id="dteNgay" editable="false" prefWidth="159" />
+        </HBox>
+
+        <HBox spacing="20">
+            <Label text="Tên Khách Hàng:" />
+            <TextField fx:id="txtTenKhachHang" editable="false" prefWidth="250" />
+        </HBox>
+
+        <HBox spacing="20">
+            <Label text="Mã Nhân Viên:" />
+            <TextField fx:id="txtMaNhanVien" editable="false" prefWidth="100" />
+
+            <Label text="Mã Kho:" />
+            <TextField fx:id="txtMaKho" editable="false" prefWidth="100" />
+
+            <Button fx:id="btnChonKhoHang" text="Chọn Kho Hàng" disable="true" prefWidth="211" />
+        </HBox>
+
+        <Separator prefWidth="485" />
+
+        <HBox spacing="20">
+            <Label text="Mã Vật Tư:" />
+            <TextField fx:id="txtMaVatTu" editable="false" prefWidth="244" />
+            <Button fx:id="btnChonVatTu" text="Chọn Vật Tư" disable="true" prefWidth="232" />
+        </HBox>
+
+        <HBox spacing="20">
+            <Label text="Số Lượng:" />
+            <Spinner fx:id="txtSoLuong" editable="true" prefWidth="244" />
+        </HBox>
+
+        <HBox spacing="20">
+            <Label text="Đơn Giá:" />
+            <Spinner fx:id="txtDonGia" editable="true" prefWidth="244" />
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="tablePhieuXuat" layoutX="520" layoutY="40" prefWidth="470" prefHeight="300">
+        <!-- Define columns via Controller or inline if needed -->
+    </TableView>
+
+    <!-- Bảng Chi Tiết Phiếu Xuất -->
+    <TitledPane layoutX="20" layoutY="500" prefWidth="970" text="Chi Tiết Phiếu Xuất" expanded="true">
+        <VBox spacing="10">
+            <TableView fx:id="tableChiTietPhieuXuat" prefHeight="150">
+                <!-- Define columns via Controller -->
+            </TableView>
+
+            <HBox spacing="10">
+                <Label text="Mã Vật Tư:" />
+                <TextField fx:id="txtMaVatTuChiTietPhieuXuat" />
+
+                <Label text="Số Lượng:" />
+                <Spinner fx:id="txtSoLuongChiTietPhieuXuat" />
+
+                <Label text="Đơn Giá:" />
+                <Spinner fx:id="txtDonGiaChiTietPhieuXuat" />
+            </HBox>
+        </VBox>
+    </TitledPane>
+</AnchorPane>
